@@ -62,11 +62,24 @@ export default function Home() {
     setConfirmPBool(validateConfirmPassword(confrimPassword));
   };
 
+  const buttonClick = () => {
+    if (
+      UNBool === true &&
+      EBool === true &&
+      PBool === true &&
+      ConfirmPBool === true
+    ) {
+      alert("signed Up Successfully");
+    }
+  };
+
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="w-1/3 flex justify-center bg-slate-300 rounded-3xl h-[35rem] shadow-xl shadow-black ">
+    <div className="flex justify-center items-center min-h-screen">
+      <div className="w-full md:w-1/2 lg:w-1/3 flex justify-center bg-slate-300 rounded-3xl h-auto md:h-[35rem] shadow-xl shadow-black">
         <form className="flex text-black justify-center w-full  flex-col">
-          <h1 className=" font-bold text-center mb-5 p-4 text-5xl">Sign Up</h1>
+          <h1 className="font-bold text-center mb-5 p-4 text-4xl md:text-5xl">
+            Sign Up
+          </h1>
           <input
             onChange={handleName}
             type="text"
@@ -132,7 +145,12 @@ export default function Home() {
               Please Enter The Password Again .
             </p>
           )}
-          <button></button>
+          <button
+            onClick={buttonClick}
+            className="rounded-xl shadow-lg shadow-slate-900 w-fit ml-auto mr-auto my-6  p-3 px-10 font-semibold text-2xl hover:text-white text-black bg-transparent"
+          >
+            Sign Up
+          </button>
         </form>
       </div>
     </div>
